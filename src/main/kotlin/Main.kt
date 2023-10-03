@@ -25,8 +25,7 @@ fun play(game: TicTacToeGame) {
         do {
             print("Ход игрока №${player % 2 + 1} (${(player % 2 == 0).toMark()})>> ")
             val (x, y) = input()
-            val success = game.mark(x, y, player % 2 == 0)
-        } while (!success)
+        } while (!game.mark(x, y, player % 2 == 0))
         if (game.checkEnd(player % 2 == 0)) break
         player = ((player + 1) % 2)
     }
